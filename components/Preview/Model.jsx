@@ -40,7 +40,7 @@ const Name = styled.div`
   font-weight: 600;
 `;
 const Icon = styled.div`
-  flex-grow: 1;
+  height: 3vh;
   width: 4vh;
   background-color: white;
 `;
@@ -59,7 +59,7 @@ const Container = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   padding: 1.2vh;
 `;
@@ -158,7 +158,7 @@ const RightTitle = styled.div`
   text-align: center;
   font-weight: 600;
   color: #cc8750;
-  padding-bottom: .8vh;
+  padding-bottom: 0.8vh;
 `;
 const RightValue = styled.div`
   font-weight: 400;
@@ -204,11 +204,17 @@ function Model({ user }) {
             <Value>{user.hobby}</Value>
           </Container>
         </Hobby>
-        <Links></Links>
+        <Links>
+          <Container>
+            <Icon></Icon>
+            <Title>Links:</Title>
+            <Value>{user.links}</Value>
+          </Container>
+        </Links>
       </Left>
       <Right>
         <Quote>
-          <RightContainer>"Uma frase impactante. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</RightContainer>
+          <RightContainer>{user.impact}</RightContainer>
         </Quote>
         <About>
           <RightContainer>
