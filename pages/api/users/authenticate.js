@@ -21,17 +21,7 @@ function authenticate(req, res) {
 
     // create a jwt token that is valid for 7 days
     const token = jwt.sign({ sub: user.id }, serverRuntimeConfig.secret, { expiresIn: '7d' });
-
+    user.token = token
     // return basic user details and token
-    return res.status(200).json({
-        id: user.id,
-        ra: user.ra,
-        name: user.name,
-        dateUpdated: user.dateUpdated,
-        hobby: user.hobby,
-        birthplace: user.birthplace,
-        birth: user.birth,
-        gender: user.gender,
-        token
-    });
+    return res.status(200).json(user);
 }

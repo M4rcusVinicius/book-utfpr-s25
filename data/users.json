@@ -1,1 +1,18 @@
-[]
+[
+
+  {
+    "ra": 123456789,
+    "name": "Marcus Vinicus Almeida Pires",
+    "id": 1,
+    "hash": "$2a$10$aJoWsRO.vTaJIWcr259iRe8TJckXW9ZDjIgGpfD9HYxij7ysO5ig6",
+    "dateCreated": "2022-05-09T01:04:48.836Z",
+    "dateUpdated": "2022-05-09T01:07:50.126Z",
+    "gender": "Smurf",
+    "birth": "02/03/0004",
+    "birthplace": "Polo sul",
+    "hobby": "Beber água",
+    "about": "As formigas são insetos que vivem em sociedade. Em cada colônia de formigas há muitas rainhas que são responsáveis pela reprodução e que podem viver até 18 anos. A fecundação das formigas-rainhas ocorre durante o voo nupcial, e o macho morre logo após. Antes de colocar os ovos, as rainhas perdem suas asas.",
+    "why": "O chuchu é um hortícola cada vez mais popular entre nós. Por ser de fácil digestão, rico em fibras e com muito poucas calorias, é cada vez mais incluído numa dieta alimentar balanceada e equilibrada. Por outro lado, o chuchu é muito rico em nutrientes e vitaminas, contribuindo para fornecer ao nosso organismos parte daquilo que ele necessita.",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTY1MjA1ODI5MSwiZXhwIjoxNjUyNjYzMDkxfQ.NSClSLL9romYbQiOIHrs6EoFwrOeWIJI2xs4uB2mMRk"
+  }
+]
