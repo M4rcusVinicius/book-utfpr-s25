@@ -12,6 +12,9 @@ export { Nav };
 
 const Navbar = styled.div`
   margin-right: ${props => props.mg && '71vh'};
+  @media (max-width: 900px) {
+    margin-right: 0;
+  }
 `;
 
 const Links = styled.div`
