@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Fingerprint, Calendar, Home, Extension, Link, PaperPlane, Map } from '@styled-icons/boxicons-regular'
 
 export { Model };
 
@@ -40,9 +41,9 @@ const Name = styled.div`
   font-weight: 600;
 `;
 const Icon = styled.div`
-  height: 3vh;
+  height: 4vh;
   width: 4vh;
-  background-color: white;
+  color: white;
 `;
 const Title = styled.div`
   font-size: 1.5vh;
@@ -53,6 +54,8 @@ const Value = styled.div`
   font-size: 1.7vh;
   color: #ffffff;
   font-weight: 400;
+  line-height: ${props => props.link ? "" : "1.2vh"};
+  word-wrap: ${props => props.link && "anywhere" };
 `;
 const Container = styled.div`
   height: 100%;
@@ -75,7 +78,7 @@ const PhotoContainer = styled.div`
 const Photo = styled.div`
   height: 23vh;
   width: 23vh;
-  background-color: #0000ff80;
+  background-color: white;
   border-radius: 50%;
 `;
 const Gender = styled.div`
@@ -151,7 +154,7 @@ const RightContainer = styled.div`
 const RightIcon = styled.div`
   height: 7vh;
   width: 7vh;
-  background-color: blue;
+  color: #f3ae31;
 `;
 const RightTitle = styled.div`
   font-size: 2.1vh;
@@ -166,7 +169,6 @@ const RightValue = styled.div`
 `;
 
 function Model({ user }) {
-  console.log(user);
   return (
     <Wrapper>
       <Left>
@@ -178,37 +180,37 @@ function Model({ user }) {
         </PhotoContainer>
         <Gender>
           <Container>
-            <Icon></Icon>
+            <Icon> <Fingerprint /></Icon>
             <Title>Gênero:</Title>
             <Value>{user.gender}</Value>
           </Container>
         </Gender>
         <Birth>
           <Container>
-            <Icon></Icon>
+            <Icon>< Calendar /> </Icon>
             <Title>Data de nascimento:</Title>
             <Value>{user.birth}</Value>
           </Container>
         </Birth>
         <Birthplace>
           <Container>
-            <Icon></Icon>
+            <Icon><Home /> </Icon>
             <Title>Origem:</Title>
             <Value>{user.birthplace}</Value>
           </Container>
         </Birthplace>
         <Hobby>
           <Container>
-            <Icon></Icon>
+            <Icon><Extension /> </Icon>
             <Title>Hobby:</Title>
             <Value>{user.hobby}</Value>
           </Container>
         </Hobby>
         <Links>
           <Container>
-            <Icon></Icon>
+            <Icon><Link /> </Icon>
             <Title>Links:</Title>
-            <Value>{user.links}</Value>
+            <Value link>{user.links}</Value>
           </Container>
         </Links>
       </Left>
@@ -218,14 +220,14 @@ function Model({ user }) {
         </Quote>
         <About>
           <RightContainer>
-            <RightIcon></RightIcon>
+            <RightIcon><PaperPlane /> </RightIcon>
             <RightTitle>Sobre você, sonhos, ambições</RightTitle>
             <RightValue>{user.about}</RightValue>
           </RightContainer>
         </About>
         <Whay>
           <RightContainer>
-            <RightIcon></RightIcon>
+            <RightIcon><Map /> </RightIcon>
             <RightTitle>Por que Engenharia de Controle e Automação/ Elétrica?</RightTitle>
             <RightValue>{user.why}</RightValue>
           </RightContainer>

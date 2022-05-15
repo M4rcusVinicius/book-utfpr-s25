@@ -22,15 +22,15 @@ function Forms(props) {
 
   // form validation rules
   const validationSchema = Yup.object().shape({
-    name: Yup.string().required('O nome é obrigatório'),
-    gender: Yup.string(),
-    birth: Yup.string(),
-    birthplace: Yup.string(),
-    hobby: Yup.string(),
-    links: Yup.string(),
-    impact: Yup.string(),
-    about: Yup.string(),
-    why: Yup.string(),
+    name: Yup.string().required('O nome é obrigatório').max(255, 'O número máximo de caractéres é 255'),
+    gender: Yup.string().max(40, 'O número máximo de caractéres é 40'),
+    birth: Yup.string().max(40, 'O número máximo de caractéres é 40'),
+    birthplace: Yup.string().max(40, 'O número máximo de caractéres é 40'),
+    hobby: Yup.string().max(40, 'O número máximo de caractéres é 40'),
+    links: Yup.string().max(88, 'O número máximo de caractéres é 88'),
+    impact: Yup.string().max(90, 'O número máximo de caractéres é 90'),
+    about: Yup.string().max(230, 'O número máximo de caractéres é 230'),
+    why: Yup.string().max(230, 'O número máximo de caractéres é 230'),
   });
   const formOptions = { resolver: yupResolver(validationSchema) };
   // set default form values

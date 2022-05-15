@@ -20,6 +20,7 @@
         "react-hook-form": "^7.12.1",
         "rxjs": "^7.3.0",
         "styled-components": "^5.3.5",
+        "styled-icons": "^10.45.0",
         "yup": "^0.32.9"
     },
     "devDependencies": {
