@@ -42,7 +42,10 @@ Inicie o servidor
  - [Styled Components](https://styled-components.com/)
  - [Vercel](https://vercel.com)
 
+### Template (Fork)
 
+ - Desenvolvedor: [cornflourblue](https://github.com/cornflourblue)
+ - Projeto: [next-js-11-registration-login-example](https://github.com/cornflourblue/next-js-11-registration-login-example)
 
 ## Autores
 
