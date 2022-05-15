@@ -8,10 +8,9 @@ export default Home;
 const Wrapper = styled.section`
   display: flex;
   padding: 2rem 1rem;
-  margin-right: 70vh;
+  margin-right: 71vh;
   overflow: auto;
-  height: 100vh;
-  overflow-y: auto;
+  height: calc(100vh - 56px);
 
   @media (max-width: 900px) {
     margin-right: 0;

@@ -157,7 +157,7 @@ const RightIcon = styled.div`
   color: #f3ae31;
 `;
 const RightTitle = styled.div`
-  font-size: 2.1vh;
+  font-size: 2vh;
   text-align: center;
   font-weight: 600;
   color: #cc8750;
