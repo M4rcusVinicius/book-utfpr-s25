@@ -10,7 +10,7 @@ const Wrapper = styled.section`
   padding: 2rem 1rem;
   margin-right: 70vh;
   overflow: auto;
-  height: 90vh;
+  height: 100vh;
   overflow-y: auto;
 
   @media (max-width: 900px) {

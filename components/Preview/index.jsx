@@ -9,8 +9,8 @@ const Wrapper = styled.div`
   @media (max-width: 900px) {
     display: ${(props) => (props.display ? "flex" : "none")};
     background-color: #eee;
-    height: 100vh;
-    width: 100vw;
+    height: 200vh;
+    width: 71vh;
     position: absolute;
     top: 0;
     left: 0;
@@ -29,7 +29,7 @@ const PreviewContainer = styled.section`
 `;
 
 const Button = styled.div`
-  position: absolute;
+  position: fixed;
   display: none;
   top: 0.5rem;
   right: 1rem;
