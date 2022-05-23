@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -14,6 +15,13 @@ export { Forms };
 const Textarea = styled.textarea`
   min-height: 5rem;
   resize: vertical;
+`;
+const BkAlert = styled.div`
+  padding: 1rem;
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
 `;
 
 function Forms(props) {
@@ -60,6 +68,45 @@ function Forms(props) {
     const time = nd.toLocaleTimeString("pt-br");
     const dmy = nd.toLocaleDateString("pt-br");
     return dmy + " " + time;
+  }
+
+  function copy() {
+    var text = `
+  Nome:\n
+  ${user.name}\n
+  \n
+  Gênero:\n
+  ${user.gender}
+  \n
+  Data de nascimento:\n
+  ${user.birth}
+  \n
+  Local de Origem:\n
+  ${user.birthplace}
+  \n
+  Hobbies:\n
+  ${user.hobby}
+  \n
+  Links:\n
+  ${user.links}
+  \n
+  Uma frase impactante:\n
+  ${user.impact}
+  \n
+  Sobre você, sonhos, ambições:\n
+  ${user.about}
+  \n
+  Porque você escolheu essa engenharia:\n
+  ${user.why}
+    `;
+    navigator.clipboard.writeText(text).then(
+      function () {
+        alert("Formulário copiado com sucesso");
+      },
+      function (err) {
+        console.error("Não foi possível copiar o formulário, menssagem de erro:", err.message);
+      }
+    );
   }
 
   return (
@@ -112,9 +159,17 @@ function Forms(props) {
           <div className='invalid-feedback'>{errors.why?.message}</div>
         </div>
         <div className='form-group'>
+          <BkAlert >
+            Atenção: Copie os dados e mantenha um backup local das informações
+          </BkAlert>
+        </div>
+        <div className='form-group'>
           <button type='submit' disabled={formState.isSubmitting} className='btn btn-primary mr-2'>
             {formState.isSubmitting && <span className='spinner-border spinner-border-sm mr-1'></span>}
             Salvar
+          </button>
+          <button onClick={() => copy()} type='button' className='btn mr-2 btn-danger'>
+            Copiar
           </button>
           <button onClick={() => reset(formOptions.defaultValues)} type='button' disabled={formState.isSubmitting} className='btn btn-secondary'>
             Restaurar
@@ -123,16 +178,14 @@ function Forms(props) {
         <div className='form-group'>
           <label>Última atualização registrada: {getUpdateDate(user.dateUpdated)}</label>
         </div>
-        <div className="row g-0 bg-light position-relative mt-5 mb-5 ml-2 mr-2">
-          <div className="col-md-6 mb-md-0 p-md-4">
-            <Image src="/code.png" alt="Imágem do código" layout="fill" />
+        <div className='row g-0 bg-light position-relative mt-5 mb-5 ml-2 mr-2'>
+          <div className='col-md-6 mb-md-0 p-md-4'>
+            <Image src='/code.png' alt='Imágem do código' layout='fill' />
           </div>
-          <div className="col-md-6 p-4 ps-md-0">
-            <h5 className="mt-0">Código Open-Source</h5>
-            <p>
-              Todo o código fonte da página está disponível no Github, acesse a aba inssues para reportar erros, baixar o código, ou adcionar novas funcionalidades. 
-            </p>
-            <a href="https://github.com/M4rcusVinicius/book-utfpr-s21/" className="stretched-link">
+          <div className='col-md-6 p-4 ps-md-0'>
+            <h5 className='mt-0'>Código Open-Source</h5>
+            <p>Todo o código fonte da página está disponível no Github, acesse a aba inssues para reportar erros, baixar o código, ou adcionar novas funcionalidades.</p>
+            <a href='https://github.com/M4rcusVinicius/book-utfpr-s21/' className='stretched-link'>
               Acessar o código fonte
             </a>
           </div>
